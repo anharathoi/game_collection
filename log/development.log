@@ -4440,3 +4440,58 @@ Completed 200 OK in 93ms (Views: 62.0ms | ActiveRecord: 24.9ms)
   ↳ bin/rails:9
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-12-05 16:14:47 +1100
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/athoi/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (1.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/games/index.html.erb:16
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:20
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:28
+  Rendered games/index.html.erb within layouts/application (93.3ms)
+Completed 200 OK in 490ms (Views: 436.0ms | ActiveRecord: 28.4ms)
+
+
+Started GET "/games/8" for 127.0.0.1 at 2018-12-05 16:14:54 +1100
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mGame Load (2.8ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:73
+  [1m[36mCACHE Game Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:13
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:20
+  [1m[36mActiveStorage::Attachment Load (4.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Game"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:23
+  Rendered games/show.html.erb within layouts/application (87.0ms)
+Completed 200 OK in 160ms (Views: 96.5ms | ActiveRecord: 30.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--83790a8e2ff530820e8fe03d364e12d8d0829087/anharsOctocat.png" for 127.0.0.1 at 2018-12-05 16:14:54 +1100
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--83790a8e2ff530820e8fe03d364e12d8d0829087", "filename"=>"anharsOctocat"}
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/athoi/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (2.9ms) [0m[34mGenerated URL for file at key: puuiR6j7vSAxqUEXJdNivH6W (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjSFYxYVZJMmFqZDJVMEY0Y1ZWRldFcGtUbWwyU0RaWEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSk5hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZVzVvWVhKelQyTjBiMk5oZEM1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkZ1YUdGeWMwOWpkRzlqWVhRdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE4LTEyLTA1VDA1OjE5OjU0LjUzOFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3375dfae5dd46ce7fbabf39eff084582029920f4/anharsOctocat.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22anharsOctocat.png%22%3B+filename%2A%3DUTF-8%27%27anharsOctocat.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjSFYxYVZJMmFqZDJVMEY0Y1ZWRldFcGtUbWwyU0RaWEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSk5hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZVzVvWVhKelQyTjBiMk5oZEM1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkZ1YUdGeWMwOWpkRzlqWVhRdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE4LTEyLTA1VDA1OjE5OjU0LjUzOFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3375dfae5dd46ce7fbabf39eff084582029920f4/anharsOctocat.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22anharsOctocat.png%22%3B+filename%2A%3DUTF-8%27%27anharsOctocat.png
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjSFYxYVZJMmFqZDJVMEY0Y1ZWRldFcGtUbWwyU0RaWEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSk5hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZVzVvWVhKelQyTjBiMk5oZEM1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkZ1YUdGeWMwOWpkRzlqWVhRdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE4LTEyLTA1VDA1OjE5OjU0LjUzOFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3375dfae5dd46ce7fbabf39eff084582029920f4/anharsOctocat.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22anharsOctocat.png%22%3B+filename%2A%3DUTF-8%27%27anharsOctocat.png" for 127.0.0.1 at 2018-12-05 16:14:54 +1100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"anharsOctocat.png\"; filename*=UTF-8''anharsOctocat.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjSFYxYVZJMmFqZDJVMEY0Y1ZWRldFcGtUbWwyU0RaWEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSk5hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZVzVvWVhKelQyTjBiMk5oZEM1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkZ1YUdGeWMwOWpkRzlqWVhRdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE4LTEyLTA1VDA1OjE5OjU0LjUzOFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3375dfae5dd46ce7fbabf39eff084582029920f4", "filename"=>"anharsOctocat"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
