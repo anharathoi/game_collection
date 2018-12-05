@@ -21,7 +21,13 @@
             <%= link_to('Login / Sign Up', new_user_session_path)  %>  
           <% end %>
         </div>
-     </nav>
+    </nav>
+    <div>
+          <%= form_tag(searchgames_path, method: "get") do %>
+          <%= text_field_tag(:title, nil, placeholder:"Search by game name", class:"form-control mr-sm-2") %>
+          <%= submit_tag("Search") %>
+          <% end %>
+    </div>
     
     <%= yield %>
   </body>

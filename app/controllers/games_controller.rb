@@ -23,6 +23,10 @@ class GamesController < ApplicationController
   def edit
   end
 
+  def searchgames
+    @games = Game.where('title ilike :title', title: "%#{params[:title]}%")
+    render :index 
+  end
   # POST /games
   # POST /games.json
   def create
