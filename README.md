@@ -11,3 +11,6 @@ This is a pretty straight-forward application:
 - Run the rails migrations
 - Open server with rails s
 - You need to sign up to create games
+
+### Heroku Link
+https://intense-ridge-25533.herokuapp.com/
