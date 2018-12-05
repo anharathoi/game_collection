@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
@@ -24,7 +25,7 @@
     </nav>
     <div>
           <%= form_tag(searchgames_path, method: "get") do %>
-          <%= text_field_tag(:title, nil, placeholder:"Search by game name", class:"form-control mr-sm-2") %>
+          <%= text_field_tag(:title, nil, placeholder:"Search by game name") %>
           <%= submit_tag("Search") %>
           <% end %>
     </div>

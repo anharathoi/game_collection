@@ -19,6 +19,7 @@
   <strong>Owner:</strong>
   <%= @game.user.email %>
 </p>
+<%= image_tag @game.image, width: '300' %><br>
 <% if user_signed_in? && @game.user_id == current_user.id %>
   <%= link_to 'Edit', edit_game_path(@game) %> |
   <%= link_to 'Destroy', @game, method: :delete, data: { confirm: 'Are you sure?' } %>
