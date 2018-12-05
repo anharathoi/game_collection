@@ -1,24 +1,13 @@
-# README
+# Game Collection
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- This is a simple CRUD app that lets user add games to their collection.
+- A guest user can view all the listed games
+- The owner of the game can edit and delete the games listed
 
-Things you may want to cover:
+### Configuration
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a pretty straight-forward application:
+- To run locally, clone or downlaod the git repository.
+- Run the rails migrations
+- Open server with rails s
+- You need to sign up to create games
